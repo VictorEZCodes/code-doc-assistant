@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code Documentation Assistant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-secondary">
+  <div id="app" class="min-h-screen">
+    <header class="bg-white shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 py-4">
+        <h1 class="text-2xl font-bold text-gray-900">Code Documentation Assistant</h1>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h2 class="text-xl font-semibold mb-4">Connect Repository</h2>
+          <div class="space-y-4">
+            <input type="text" id="repo-url" placeholder="GitHub Repository URL"
+              class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
+            <button id="connect-repo"
+              class="w-full bg-primary text-white px-4 py-2 rounded-md hover:bg-primary/90 transition-colors">
+              Connect Repository
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h2 class="text-xl font-semibold mb-4">Generate Documentation</h2>
+          <div class="space-y-4">
+            <select id="doc-type"
+              class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-primary">
+              <option value="readme">README</option>
+            </select>
+            <button id="generate-doc"
+              class="w-full bg-accent text-white px-4 py-2 rounded-md hover:bg-accent/90 transition-colors">
+              Generate Documentation
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 text-sm text-gray-600" id="status"></div>
+
+      <div class="mt-8 bg-white p-6 rounded-lg shadow">
+        <h2 class="text-xl font-semibold mb-4">Documentation Preview</h2>
+        <div id="preview" class="prose max-w-none"></div>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
